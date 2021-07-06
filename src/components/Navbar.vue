@@ -29,7 +29,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="fas fa-users space-ico"></i>Redes Socials
+              <i class="fas fa-users space-ico"></i>Redes Sociais
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#"><i class="fab fa-linkedin space-ico"></i>Linkedin</a></li>
