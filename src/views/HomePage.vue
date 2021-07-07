@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar />
     <div class="mt-6 mb-3">
       <section id="s1">
         <div class="container">
@@ -51,17 +50,13 @@
         </div>
       </section>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Navbar from "./Navbar.vue";
-import Footer from "./Footer.vue";
 
 export default defineComponent({
-  components: { Navbar, Footer },
   methods: {
     scroll() {
       const element = document.getElementById("s2");

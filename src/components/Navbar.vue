@@ -1,7 +1,10 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container-fluid ms-7">
-      <img src="/img/logo.png" alt="" class="brand" />
+      <router-link class="nav-link nav-bar-links" to="/"
+        ><img src="/img/logo.png" alt="" class="brand"
+      /></router-link>
+
       <button
         class="navbar-toggler"
         type="button"
@@ -16,9 +19,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto me-5 list-group">
           <li class="nav-item">
-            <a class="nav-link nav-bar-links" href="#"
-              ><i class="fas fa-phone-square-alt space-ico"></i>Contato
-            </a>
+            <router-link class="nav-link nav-bar-links" to="/contact"
+              ><i class="fas fa-phone-square-alt space-ico"></i
+              >Contato</router-link
+            >
           </li>
           <li class="nav-item dropdown">
             <a
@@ -32,9 +36,21 @@
               <i class="fas fa-users space-ico"></i>Redes Sociais
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#"><i class="fab fa-linkedin space-ico"></i>Linkedin</a></li>
-              <li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square space-ico"></i>Facebook</a></li>
-              <li><a class="dropdown-item" href="#"><i class="fab fa-instagram space-ico"></i>Instagram</a></li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fab fa-linkedin space-ico"></i>Linkedin</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fab fa-facebook-square space-ico"></i>Facebook</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fab fa-instagram space-ico"></i>Instagram</a
+                >
+              </li>
             </ul>
           </li>
         </ul>
