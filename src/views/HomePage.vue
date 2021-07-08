@@ -33,18 +33,20 @@
           </p>
           <div class="row mb-4 mt-4">
             <div class="col-md-6">
-              <div class="border product">
-                <div class="p-5">
-                  <i class="fas fa-coins fa-3x"></i>
-                  <h3 class="pt-3 lh-base">IRFácil</h3>
-                  <p class="mb-0">
-                    Automatize toda a rotina relacionada a declaração do imposto
-                    de renda variável, controle suas operações e/ou a de seus
-                    clientes através de uma interface simples e robusta,
-                    encontre pessoas precisando dos seus serviços.
-                  </p>
-                </div>
-              </div>
+              <router-link to="/ir-facil/register" class="no-link-decorator">
+                <div class="border product">
+                  <div class="p-5">
+                    <i class="fas fa-coins fa-3x"></i>
+                    <h3 class="pt-3 lh-base">IRFácil</h3>
+                    <p class="mb-0">
+                      Automatize toda a rotina relacionada a declaração do
+                      imposto de renda variável, controle suas operações e/ou a
+                      de seus clientes através de uma interface simples e
+                      robusta, encontre pessoas precisando dos seus serviços.
+                    </p>
+                  </div>
+                </div></router-link
+              >
             </div>
           </div>
         </div>
@@ -82,5 +84,9 @@ export default defineComponent({
 .fa-chart-line {
   color: #f8e054;
   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+.no-link-decorator {
+  text-decoration: none !important;
+  color: #000;
 }
 </style>

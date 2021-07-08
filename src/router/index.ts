@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router';
 
 import HomePage from "@/views/HomePage.vue";
 import Contact from "@/views/Contact.vue";
+import Register from "@/views/Register.vue";
 
 const routes = [
     {
@@ -11,8 +12,13 @@ const routes = [
     },
     {
         path: "/contact",
-        name: "About",
+        name: "Contact",
         component: Contact,
+    },
+    {
+        path: "/ir-facil/register",
+        name: "Register",
+        component: Register,
     },
 ];
 
