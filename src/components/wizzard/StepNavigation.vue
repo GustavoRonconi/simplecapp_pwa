@@ -10,13 +10,15 @@
   </ol>
 </template>
 
-<script>
+
+<script lang="ts">
+import { defineComponent } from "vue";
 import StepNavigationStep from "./StepNavigationStep.vue";
-export default {
+export default defineComponent({
   name: "StepNavigation",
   props: ["steps", "currentstep"],
   components: {
     StepNavigationStep,
   },
-};
+});
 </script>

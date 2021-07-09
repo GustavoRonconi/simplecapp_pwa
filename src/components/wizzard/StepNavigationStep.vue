@@ -7,20 +7,21 @@
   </li>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+export default defineComponent({
   name: "StepNavigationStep",
   props: ["step", "currentstep"],
 
   computed: {
-    indicatorclass() {
+    indicatorclass(): { active: boolean; complete: boolean } {
       return {
         active: this.step.id == this.currentstep,
         complete: this.currentstep > this.step.id,
       };
     },
   },
-};
+});
 </script>
 
 <style scoped>

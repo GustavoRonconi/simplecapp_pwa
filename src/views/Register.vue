@@ -4,15 +4,21 @@
 
     <div v-show="currentstep == 1" class="container">
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Pricing</h1>
+        <h1 class="display-4">IRFácil</h1>
         <p class="lead">
-          Quickly build an effective pricing table for your potential customers
-          with this Bootstrap example. It's built with default Bootstrap
-          components and utilities with little customization.
+          Por favor, nos diga o seu perfil para que possamos lhe indicar o
+          produto correto.
         </p>
+        <select
+          class="form-select"
+          v-model="profileType"
+        >
+          <option value="1">Pessoa Física</option>
+          <option value="2">Escritório/Contabilidade</option>
+        </select>
       </div>
 
-      <div class="row card-deck mb-3 text-center">
+      <div v-show="profileType==1" class="row card-deck mb-3 text-center">
         <div class="col">
           <div class="card mb-4 shadow-sm">
             <div class="card-header">
@@ -139,13 +145,28 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Step from "../components/wizzard/Step.vue";
 import StepNavigation from "../components/wizzard/StepNavigation.vue";
-export default {
+import { defineComponent } from "vue";
+
+declare interface StepIn {
+  id: number;
+  title: string;
+  icon_class: string;
+}
+
+declare interface Wizzard {
+  currentstep: number;
+  profileType: string;
+  steps: StepIn[];
+}
+
+export default defineComponent({
   name: "Wizzard",
   data() {
     return {
+      profileType: "1",
       currentstep: 1,
       steps: [
         {
@@ -165,19 +186,20 @@ export default {
           icon_class: "far fa-credit-card",
         },
       ],
-    };
+    } as Wizzard;
   },
   methods: {
-    stepChanged(step) {
-      this.currentstep = step;
-    },
+    stepChanged(stepId: number) {
+      this.currentstep = stepId;
+    }
   },
   components: {
     Step,
     StepNavigation,
   },
-};
+});
 </script>
+
 
 <style scoped lang="scss">
 $wizard-color-neutral: #ccc !default;

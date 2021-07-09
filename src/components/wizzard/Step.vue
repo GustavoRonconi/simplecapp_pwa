@@ -22,24 +22,26 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
   name: "Step",
   props: ["step", "stepcount", "currentstep"],
   computed: {
-    active() {
+    active(): boolean {
       return this.step.id == this.currentstep;
     },
 
-    firststep() {
+    firststep(): boolean {
       return this.currentstep == 1;
     },
 
-    laststep() {
+    laststep(): boolean {
       return this.currentstep == this.stepcount;
     },
 
-    stepWrapperClass() {
+    stepWrapperClass(): { active: boolean } {
       return {
         active: this.active,
       };
@@ -54,5 +56,5 @@ export default {
       this.$emit("step-change", this.currentstep - 1);
     },
   },
-};
+});
 </script>
