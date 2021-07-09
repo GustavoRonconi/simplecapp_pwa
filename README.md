@@ -1,4 +1,4 @@
-# simplecapp_frontend
+# simplecapp_pwa
 
 ## Project setup
 ```
