@@ -3,24 +3,24 @@
     <StepNavigation :steps="steps" :currentstep="currentstep" />
 
     <div v-show="currentstep == 1" class="container">
-      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">IRFácil</h1>
-        <p class="lead">
+      <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+        <p class="lead text-center">
           Por favor, nos diga o seu perfil para que possamos lhe indicar o
-          produto correto.
+          produto correto
         </p>
         <select
           class="form-select"
           v-model="profileType"
+          id="profile-type"
         >
           <option value="1">Pessoa Física</option>
           <option value="2">Escritório/Contabilidade</option>
         </select>
       </div>
 
-      <div v-show="profileType==1" class="row card-deck mb-3 text-center">
+      <div v-show="profileType==1" class="row card-deck text-center">
         <div class="col">
-          <div class="card mb-4 shadow-sm">
+          <div class="card mb-4 shadow-sm mx-auto">
             <div class="card-header">
               <h4 class="my-0 font-weight-normal">Free</h4>
             </div>
@@ -44,7 +44,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card mb-4 shadow-sm">
+          <div class="card mb-4 shadow-sm mx-auto">
             <div class="card-header">
               <h4 class="my-0 font-weight-normal">Pro</h4>
             </div>
@@ -60,27 +60,6 @@
               </ul>
               <button type="button" class="btn btn-lg btn-block btn-primary">
                 Get started
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-              <h4 class="my-0 font-weight-normal">Enterprise</h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">
-                $29 <small class="text-muted">/ mo</small>
-              </h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>30 users included</li>
-                <li>15 GB of storage</li>
-                <li>Phone and email support</li>
-                <li>Help center access</li>
-              </ul>
-              <button type="button" class="btn btn-lg btn-block btn-primary">
-                Contact us
               </button>
             </div>
           </div>
@@ -163,7 +142,7 @@ declare interface Wizzard {
 }
 
 export default defineComponent({
-  name: "Wizzard",
+  name: "Register",
   data() {
     return {
       profileType: "1",
@@ -208,10 +187,10 @@ $wizard-color-complete: #87d37c !default;
 $wizard-step-width-height: 64px !default;
 $wizard-step-font-size: 24px !default;
 
-@import "https://fonts.googleapis.com/css?family=Roboto";
+
 
 .container {
-  max-width: 960px;
+  max-width: 1100px;
 }
 
 .card-deck .card {

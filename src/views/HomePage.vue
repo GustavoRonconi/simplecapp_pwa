@@ -9,7 +9,7 @@
               <i class="fas fa-chart-line fa-5x"></i>
             </div>
             <div class="col-md-9 col-xl-5">
-              <p class="fs-4">
+              <p class="fs-4 lead">
                 Foque seus esforços no que realmente interessa no mercado
                 financeiro, <u>lucro</u>, deixe a burocracia com a gente,
                 conheça nossos produtos.
@@ -27,18 +27,18 @@
       <section class="mt-6" id="s2">
         <div class="container">
           <h1 class="display-3 fw-semi-bold">Produtos</h1>
-          <p class="fs-4">
+          <p class="fs-4 lead">
             A SimpleCapp oferece soluções para automações de rotinas do mercado
             financeiro e contabilidade.
           </p>
           <div class="row mb-4 mt-4">
             <div class="col-md-6">
-              <router-link to="/ir-facil/register" class="no-link-decorator">
+              <router-link to="/ir-facil" class="no-link-decorator">
                 <div class="border product">
                   <div class="p-5">
                     <i class="fas fa-coins fa-3x"></i>
                     <h3 class="pt-3 lh-base">IRFácil</h3>
-                    <p class="mb-0">
+                    <p class="mb-0 lead">
                       Automatize toda a rotina relacionada a declaração do
                       imposto de renda variável, controle suas operações e/ou a
                       de seus clientes através de uma interface simples e
@@ -69,9 +69,6 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.mt-6 {
-  margin-top: 10% !important;
-}
 
 .product {
   border-color: #4b4949 !important;

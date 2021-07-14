@@ -22,11 +22,14 @@ export default defineComponent({
 
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body {
-  font-family: "Roboto";
   padding-top: 105px;
 }
+
+.mt-6 {
+  margin-top: 10% !important;
+}
+
 .btn-simplecapp {
   color: #3f3d3d !important;
   background-color: #f7de50 !important;
@@ -34,5 +37,9 @@ body {
 }
 .btn-simplecapp:active {
   color: #b19600 !important;
+}
+
+.under-decor {
+  color: #f7de50;
 }
 </style>

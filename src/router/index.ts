@@ -3,6 +3,7 @@ import { createWebHistory, createRouter } from 'vue-router';
 import HomePage from "@/views/HomePage.vue";
 import Contact from "@/views/Contact.vue";
 import Register from "@/views/Register.vue";
+import IrfacilDetails from "@/views/IrfacilDetails.vue"
 
 const routes = [
     {
@@ -14,6 +15,11 @@ const routes = [
         path: "/contact",
         name: "Contact",
         component: Contact,
+    },
+    {
+        path: "/ir-facil",
+        name: "IrfacilDetails",
+        component: IrfacilDetails,
     },
     {
         path: "/ir-facil/register",
