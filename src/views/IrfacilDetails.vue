@@ -40,9 +40,9 @@
                 <h1><span class="under-decor">_ </span>IRFácil</h1>
                 <p class="fs-4 lead">
                   Chegou a hora de se <u>preocupar</u> com o imposto de renda?
-                  Resolva você mesmo em 5 minutos, <u>encontre</u> um
+                  Resolva você mesmo em 5 minutos, encontre um
                   especialista pra cuidar disso ou seja você mesmo o
-                  <u>especialista</u> de alguém através da plataforma IRFácil.
+                  especialista de alguém através da plataforma IRFácil.
                 </p>
               </div>
               <div class="col-lg-3 col-xl-2">
