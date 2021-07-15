@@ -31,7 +31,7 @@
         class="button-indicator"
       ></button>
     </div>
-    <div class="carousel-inner mx-auto">
+    <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
         <div class="container">
           <div class="carousel-caption text-start">
@@ -250,6 +250,9 @@ export default defineComponent({
   width: 100px;
   outline: black;
   background-size: 100%, 100%;
+  position: absolute;
+  top: 300px;
+  right: 20;
 }
 
 .carousel-control-next-icon:after {
@@ -265,43 +268,23 @@ export default defineComponent({
   color: #f7de50;
 }
 
-/* Carousel base class */
-.carousel {
-  margin-bottom: 4rem;
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 1400px;
+  bottom: initial;
 }
+
+
+.button-indicator {
+  background-color: #f7de50 !important;
+}
+
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   color: black;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 15%;
+  transform: translateY(-15%);
   bottom: initial;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel-item {
-  height: 700px;
-  bottom: initial;
-}
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
-@media (min-width: 40em) {
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 1.25rem;
-    font-size: 1.25rem;
-    line-height: 1.4;
-  }
-
-  .featurette-heading {
-    font-size: 50px;
-  }
-}
-
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
 }
 </style>
+
