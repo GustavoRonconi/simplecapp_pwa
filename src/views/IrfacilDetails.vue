@@ -1,5 +1,5 @@
 <template>
-  <div id="myCarousel" class="carousel slide mt-06" data-bs-ride="carousel">
+  <div id="myCarousel" class="carousel slide mt-2" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button
         type="button"
@@ -31,10 +31,10 @@
         class="button-indicator"
       ></button>
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-interval="5000">
+    <div class="carousel-inner mx-auto">
+      <div class="carousel-item active" data-bs-interval="10000">
         <div class="container">
-          <div class="carousel-caption text-start first">
+          <div class="carousel-caption text-start">
             <div class="row">
               <div class="col-lg-8 col-xl-10">
                 <h1><span class="under-decor">_ </span>IRFácil</h1>
@@ -52,7 +52,7 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item" data-interval="10000">
+      <div class="carousel-item" data-bs-interval="20000">
         <div class="container">
           <div class="carousel-caption text-start">
             <div class="row">
@@ -104,7 +104,7 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item" data-interval="10000">
+      <div class="carousel-item" data-bs-interval="20000">
         <div class="container">
           <div class="carousel-caption text-start">
             <div class="row">
@@ -147,7 +147,7 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item" data-interval="10000">
+      <div class="carousel-item" data-bs-interval="20000">
         <div class="container">
           <div class="carousel-caption text-start">
             <div class="row">
@@ -159,10 +159,7 @@
                 seus clientes? Utilize a plataforma do IRFácil para automatizar
                 toda a rotina de apuração e simplificar a gestão de dados de
                 seus clientes, aumentando a confiabilidade e eficiência da sua
-                operação. Na plataforma do IRFácil também é possível arrecadar
-                novos investidores interessados nos seus serviços, alocamos
-                novos clientes para você seguindo um critério de
-                preço/reputação.
+                operação.
               </p>
             </div>
             <div class="row mt-3">
@@ -177,6 +174,19 @@
                   vinculamos as operações e apurações automaticamente ao CPF do
                   cliente cadastrado, tudo para facilitar a sua operação na
                   plataforma.
+                </p>
+              </div>
+              <div class="col-md-4 mx-auto">
+                <div class="text-center mb-3">
+                  <i class="fas fa-users fa-6x yellow-icon"></i>
+                </div>
+                <h2 class="text-center fs-4">
+                  Ajudamos você a conseguir mais clientes
+                </h2>
+                <p class="fs-6 lead">
+                  Na plataforma do IRFácil também é possível arrecadar novos
+                  investidores interessados nos seus serviços, alocamos novos
+                  clientes para você seguindo um critério de preço/reputação..
                 </p>
               </div>
               <div class="col-md-4 mx-auto">
@@ -242,17 +252,6 @@ export default defineComponent({
   background-size: 100%, 100%;
 }
 
-.carousel-caption {
-  color: black;
-}
-
-.first {
-  text-align: center;
-  /*top: auto;*/
-  top: 60%;
-  transform: translateY(-60%);
-}
-
 .carousel-control-next-icon:after {
   content: ">";
   font-size: 80px;
@@ -272,23 +271,37 @@ export default defineComponent({
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
+  color: black;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: initial;
 }
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
-  height: 40rem;
-}
-.carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 40rem;
+  height: 700px;
+  bottom: initial;
 }
 
-.button-indicator {
-  background-color: #f7de50 !important;
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
 }
 </style>
