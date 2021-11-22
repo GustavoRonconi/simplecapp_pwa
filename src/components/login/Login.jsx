@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import { Field, Form } from 'react-final-form';
+// import {FormText } from 'reactstrap';
 import '../login/login.css'
 import * as Bs from 'react-icons/bs';
 
 
 
+
 export default class Login extends Component {
+
   onSubmit = (values) => {
     this.props.setSteps(2)
+
   }
+  
 
   render() {
     return <div className="containerLogin">
@@ -23,10 +28,13 @@ export default class Login extends Component {
               <Field
                 name="email"
                 component="input"
-                type="text"
+                type="email"
                 placeholder="E-mail..."
                 className="field"
               />
+              {/* {errors.email && <FormText color="danger">
+                {errors.email}
+              </FormText>} */}
             </div>
             <button className="buttonLogin" type="submit"><Bs.BsArrowRight className="arrow" size={45} /></button>
           </form>)}
