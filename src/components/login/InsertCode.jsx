@@ -1,17 +1,29 @@
 import '../login/login.css';
 import '../login/insertCode.css'
-import { useState } from "react";
 import ReactCodeInput, { reactCodeInput } from "react-code-input";
 import * as Bs from 'react-icons/bs';
-// import validateLogin from '../../services/validateLogin';
+import { useState } from 'react'
+import sendRegister from '../../services/apiServices';
+import api from '../../services/axiosConfig';
+import { login } from '../../auth/auth'
+import { useNavigate } from 'react-router-dom';
+import { HOME } from '../../routes/routes'
+import { FormText } from 'reactstrap';
+import Loading from './Loading';
 
 
 
 
-export default function InsertCode({ setSteps }) {
-    const [valueInput, setValueInput] = useState(false);
-    const [valid, setValid] = useState(true);
+export default function InsertCode({ setSteps, valuesLogin }) {
 
+    const [code, setCode] = useState()
+    const navigate = useNavigate();
+    const [errors, setErrors] = useState({});
+    const [loading, setLoading] = useState(false)
+
+
+
+    //style code-input
     const styleInput = {
         className: reactCodeInput,
         inputStyle: {
@@ -39,20 +51,49 @@ export default function InsertCode({ setSteps }) {
             border: 'none'
         }
     }
-//remover preenchimento automatico
 
-    const handleValueInput = (e) => {
-        if (e.length === 6) {
-            setValueInput(true);
-            if (e !== "222222") {
-                setValid(false);
-            } else {
-                setValid(true);
-            }
-        } else {
-            setValueInput(false);
+
+    //errors api
+
+    function apiErrorHandle(reason) {
+        const fieldsErrorTranslate = {
+            'code': 'code'
         }
-    };
+        if (reason.response.status === 400) {
+            reason.response.data.errors.array.forEach(error => {
+                var errorsToAppend = {}
+                errorsToAppend[fieldsErrorTranslate[error.field]] = error.defaultMessage
+                setErrors(errorsToAppend)
+            });
+        } else if (reason.response.status === 401) {
+            setErrors({ code: "Código inválido! Confira se o código digitado está correto ou clique em: " })
+        }
+        setLoading(false)
+    }
+
+
+    const handleChangeInput = e => {
+
+        if (e.length === 5) {
+            setCode(e)
+            // chamar o método que envia o código pra API
+            setLoading(true);
+            api.post("/login").then(
+                response => {
+                    login(response.data.token);                    
+                    navigate(HOME)
+                    setLoading(false);
+                }
+            ).catch((reason) => apiErrorHandle(reason));
+
+        }
+    }
+
+    //pegar email e atualizar código
+    function resendCode() {
+        sendRegister(valuesLogin);
+
+    }
 
 
     return (
@@ -60,109 +101,33 @@ export default function InsertCode({ setSteps }) {
             <div className="text">
                 <p>Enviamos um código de acesso, verifique em seu e-mail. &#x1F511;</p>
             </div>
+
             <div className="inputCode">
+
                 <ReactCodeInput
                     name="code"
                     inputMode="numeric"
                     fields={5}
                     type="number"
-                    onChange={(e) => handleValueInput(e)}
-                    isValid={valid}
+                    onChange={handleChangeInput}
                     {...styleInput}
                 />
-                {valueInput ? '' : null}
+                <div>
+                    {errors.code &&
+                        <FormText className='textErrors'>{errors.code}
+                            <span onClick={resendCode} className='cursor'> Reenviar Código</span>
+                        </FormText>
+
+
+                    }
+                </div>
             </div>
             <div>
-                <button className="buttonLogin" onClick={() => setSteps(1)}><Bs.BsArrowLeft className="arrow" size={45} /></button>
+                {!loading ? <button className="buttonLogin" onClick={() => setSteps(1)}>
+                    <Bs.BsArrowLeft className="arrow" size={45} />
+                </button> : <Loading />}
             </div>
         </div>
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import '../login/login.css'
-// import '../login/insertCode.css'
-// import * as Bs from 'react-icons/bs';
-// import React, { createRef } from "react";
-// import { useState } from 'react';
-
-
-
-// function InsertCode({ setSteps }) {
-
-//     // this.textInput = React.createRef();
-
-//     // const [codeSubmited, setCodeSubmited] = useState(
-//     // {
-//     //     1: undefined,
-//     //     2: undefined,
-//     //     3: undefined,
-//     //     4: undefined,
-//     //     5: undefined,
-//     //     6: undefined
-//     // }
-//     // );
-
-//     let codeSubmited = []
-
-//     function onChangeCode(e) {
-//         console.log(e.target.value, e.target.name)
-//     }
-
-
-
-
-//     return (
-//         <div className="containerLogin">
-//             <div className="text">
-//                 <p>Enviamos um código de acesso para validar seu acesso.</p>
-//             </div>
-//             <div>
-//                 <div className="divInputCode" >
-//                     <input autoFocus value={codeSubmited[0]} id="0" type="number" onChange={onChangeCode} className="inputCode" />
-//                 </div>
-//                 <div className="divInputCode">
-//                     <input value={codeSubmited[1]} id="1" type="number" onChange={onChangeCode} className="inputCode" />
-//                 </div>
-//                 <div className="divInputCode">
-//                     <input value={codeSubmited[2]} id="2" type="number" onChange={onChangeCode} className="inputCode" />
-//                 </div>
-//                 <div className="divInputCode">
-//                     <input value={codeSubmited[3]} id="3" type="number" onChange={onChangeCode} className="inputCode" />
-//                 </div>
-//                 <div className="divInputCode">
-//                     <input value={codeSubmited[4]} id="4" type="number" onChange={onChangeCode} className="inputCode" />
-//                 </div>
-//                 <div className="divInputCode">
-//                     <input value={codeSubmited[5]} id="5" type="number" onChange={onChangeCode} className="inputCode" />
-//                 </div>
-//             </div>
-//             <button className="buttonLogin" onClick={() => setSteps(1)}><Bs.BsArrowLeft className="arrow" size={45} /></button>
-//         </div >
-//     )
-// };
-
-
-
-
-
-
-
-
-
-// export default InsertCode;
 

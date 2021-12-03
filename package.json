@@ -8,13 +8,18 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
+    "enzyme": "^3.11.0",
     "final-form": "^4.20.4",
+    "jest-junit": "^13.0.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.2",
     "react-code-input": "^3.10.1",
     "react-dom": "^17.0.2",
     "react-final-form": "^6.5.7",
     "react-icons": "^4.3.1",
+    "react-lottie": "^1.2.3",
+    "react-native": "^0.66.3",
+    "react-native-web": "^0.17.5",
     "react-router": "^6.0.2",
     "react-router-dom": "^6.0.2",
     "react-scripts": "^4.0.3",
@@ -22,13 +27,6 @@
     "reactstrap": "^9.0.1",
     "use-history": "^1.4.1",
     "web-vitals": "^1.1.2"
-  },
-  "devDependencies": {
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-react": "^7.16.4",
-    "babel-jest": "^27.3.1",
-    "jest": "^27.3.1",
-    "react-test-renderer": "^17.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -52,6 +50,14 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "jest-canvas-mock": "^2.3.1"
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-canvas-mock"
     ]
   }
 }

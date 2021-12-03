@@ -46,3 +46,8 @@
     color      : rgba(148, 149, 151);
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.textErrors {
+    color: red;
+    font-size     : 100%;
+}

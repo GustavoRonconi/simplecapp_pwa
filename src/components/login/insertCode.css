@@ -4,7 +4,10 @@
 
 } 
 
-
+.cursor {
+cursor: pointer;
+font-weight: bold;
+}
     /* width: 8%; */
     /* max-width : 45px;
     padding   : 5px; */
