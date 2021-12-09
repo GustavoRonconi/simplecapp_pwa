@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: "https://2fb6b79e-8033-4384-b541-ade9fadafa59.mock.pstmn.io",
+    baseURL: "https://61b212bac8d4640017aaf19c.mockapi.io/api/v1",
   });
   
 export default api;

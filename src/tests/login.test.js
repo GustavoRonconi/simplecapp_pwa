@@ -1,16 +1,7 @@
 import Login from '../components/login/Login'
 import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from "@testing-library/user-event";
 
 
-
-//unicode text e icon button
-
-//test input
-
-//button submit
-
-// test api
 
 describe('login', () => {
   it('mostrar textos no login', () => {

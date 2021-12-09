@@ -48,6 +48,6 @@
 }
 
 .textErrors {
-    color: red;
+    color: red !important;
     font-size     : 100%;
 }

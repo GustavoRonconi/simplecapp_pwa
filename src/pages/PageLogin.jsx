@@ -1,7 +1,7 @@
 import Login from '../components/login/Login'
 import InsertCode from '../components/login/InsertCode';
 import '../pages/pageLogin.css'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'reactstrap';
 import { useState } from 'react';
 
 
@@ -15,7 +15,7 @@ function PageLogin() {
 
         <Container style={{ backgroundColor: 'rgb(247, 222, 80)', height: '100vh' }}>
             <Row>
-                <Col>
+                <Col style={{margin:'2.5% 0 0 4.5%'}}>
                     <img className="image" src="images/logo.png" alt="logo" />
                 </Col>
             </Row>
