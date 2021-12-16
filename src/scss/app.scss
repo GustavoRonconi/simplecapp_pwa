@@ -1,13 +1,16 @@
-@import 'settings/variable';  //themes' colors
+@import './settings/variable.scss';  //themes' colors
+
+// //vendor...
+// @import './vendor';
 
 //base...
-@import 'generic/normalize.scss';
+@import './generic/normalize.scss';
 @import 'generic/box-sizing.scss';
 @import './base/scaffolding';         // styles of base elements
 @import './base/typography';          // base styles of h1-h6, p, span
 
 //components...
-@import 'component/btn';
+@import './component/btn';
 @import './component/card';
 @import './component/check-box';
 @import './component/dropdown.scss';
@@ -37,7 +40,7 @@
 
 
 //pages...
-@import 'containers/account';
+@import './containers/account';
 
 //objects...
 @import 'objects/layout.scss';

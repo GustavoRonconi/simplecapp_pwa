@@ -1,47 +1,44 @@
 import React from 'react';
 import {
+  BrowserRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom';
-import Layout from '../Layout/index';
-import MainWrapper from './MainWrapper';
-import ExamplePageOne from '../Example/index';
-import ExamplePageTwo from '../ExampleTwo/index';
-
-import {
-  HOME,
-  LOGIN
-} from '../../routes/routes'
-import Home from '../../pages/Home';
+import {HOME, LOGIN, SOBRE} from '../../routes/routes'
 import PageLogin from '../../pages/PageLogin';
+import RoutesPages from '../../pages/RoutesPages';
+import Sobre from '../../pages/Sobre'
+import Home from '../../pages/Home'
+import Layout from '../Layout';
 
-const Pages = () => (
-  <Routes>
+// const Pages = () => (
+//   <Routes>
+//     <Route path="/pages/one" element={<Sobre/>} />
+//     <Route path="/pages/two" element={<Home/>} />
+//   </Routes>
+// );
 
-    <Route path="/pages/one" component={ExamplePageOne} />
-    <Route path="/pages/two" component={ExamplePageTwo} />
-  </Routes>
-);
+// const wrappedRoutes = () => (
+//   <div>
+//     <Layout />
+//     <div className="container__wrap">
+//       <Route path="/" element={Pages} />
+//     </div>
+//   </div>
+// );
 
-const wrappedRoutes = () => (
+
+const Routers = () => (
   <div>
-    <Layout />
-    <div className="container__wrap">
-      <Route path="/pages" component={Pages} />
-    </div>
-  </div>
-);
-
-const Router = () => (
-  <MainWrapper>
-    <main>
+    <Router>
       <Routes>
-        <Route exact path={HOME} component={Home} />
-        <Route path={HOME} component={wrappedRoutes} />
+        <Route path={LOGIN} element={< PageLogin />}/>
+        <Route exact path='/' element={<RoutesPages/>} />
       </Routes>
-    </main>
-  </MainWrapper>
+    </Router>
+    </div>
+
 );
 
-export default Router;
+export default Routers;
 

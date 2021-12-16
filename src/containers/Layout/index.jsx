@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-// import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router';
+
 import classNames from 'classnames';
 import Topbar from './topbar/Topbar';
 import Sidebar from './sidebar/Sidebar';
-
 
 const Layout = () => {
  
@@ -14,6 +14,7 @@ const Layout = () => {
     'layout--collapse': isSidebarCollapsed,
   });
 
+  
   const changeSidebarVisibility = () => {
     setIsSidebarCollapsed(!isSidebarCollapsed);
   };
@@ -22,12 +23,14 @@ const Layout = () => {
     setIsSidebarShown(!isSidebarShown);
   };
 
+  
 
   return (
     <div className={layoutClass}>
       <Topbar
         changeMobileSidebarVisibility={changeMobileSidebarVisibility}
         changeSidebarVisibility={changeSidebarVisibility}
+       
       />
       <Sidebar
         sidebarShow={isSidebarShown}
@@ -39,3 +42,4 @@ const Layout = () => {
 };
 
 export default Layout;
+

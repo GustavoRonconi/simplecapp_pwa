@@ -3,34 +3,42 @@ import Scrollbar from 'react-smooth-scrollbar';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import SidebarContent from './SidebarContent';
+import { SidebarProps } from '../../../shared/prop-types/ReducerProps';
+
 
 const Sidebar = ({
-  changeMobileSidebarVisibility, sidebarShow, sidebarCollapse,
+  changeToDark, changeToLight, changeMobileSidebarVisibility, sidebar, topNavigation, sidebarShow, sidebarCollapse,
 }) => {
   const sidebarClass = classNames({
     sidebar: true,
     'sidebar--show': sidebarShow,
-    'sidebar--collapse': sidebarCollapse,
+    'sidebar--no-desktop': topNavigation,
+    'sidebar--collapse': !topNavigation && sidebarCollapse,
   });
 
   return (
     <div className={sidebarClass}>
       <button
-        type="button"
-        aria-label="sidebar visibility"
         className="sidebar__back"
+        type="button"
+        aria-label="change mobile sidebar visibility button"
         onClick={changeMobileSidebarVisibility}
       />
       <Scrollbar className="sidebar__scroll scroll">
-        <div className="sidebar__wrapper sidebar__wrapper--desktop">
-          <SidebarContent
-            onClick={() => {}}
-            sidebarCollapse={sidebarCollapse}
-          />
-        </div>
+        {!topNavigation && (
+          <div className="sidebar__wrapper sidebar__wrapper--desktop">
+            <SidebarContent
+              changeToDark={changeToDark}
+              changeToLight={changeToLight}
+              sidebarCollapse={sidebarCollapse}
+            />
+          </div>
+        )}
         <div className="sidebar__wrapper sidebar__wrapper--mobile">
           <SidebarContent
             onClick={changeMobileSidebarVisibility}
+            changeToDark={changeToDark}
+            changeToLight={changeToLight}
           />
         </div>
       </Scrollbar>
@@ -39,9 +47,11 @@ const Sidebar = ({
 };
 
 Sidebar.propTypes = {
-  sidebarShow: PropTypes.bool.isRequired,
-  sidebarCollapse: PropTypes.bool.isRequired,
+  sidebar: SidebarProps.isRequired,
+  changeToDark: PropTypes.func.isRequired,
+  changeToLight: PropTypes.func.isRequired,
   changeMobileSidebarVisibility: PropTypes.func.isRequired,
+  topNavigation: PropTypes.bool.isRequired,
 };
 
 export default Sidebar;

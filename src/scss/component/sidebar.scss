@@ -19,11 +19,7 @@
   }
 
   &.sidebar--show {
-    display: block;
-
-    @include directify($directions) {
-      transform:  #{directed('sidebar-close')};
-    }
+    transform: translateX(0);
 
     .sidebar__back {
       display: block;
@@ -47,9 +43,6 @@
     &:before {
       opacity: 1;
     }
-  }
-  @include themify($themes) {
-    background: themed('sidebarColor');
   }
 }
 
@@ -167,7 +160,7 @@
   margin-right: 10px;
   font-size: 13px;
   line-height: 13px;
-  color: $color-accent;
+  color: rgb(247, 222, 80);
 }
 
 .sidebar__submenu {
@@ -215,7 +208,7 @@
   line-height: 14px;
   opacity: 1;
   transition: opacity 0.5s 0.2s, transform 0.3s;
-  color: $color-accent;
+  color: rgb(247, 222, 80);
 
 }
 

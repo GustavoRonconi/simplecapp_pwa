@@ -62,7 +62,7 @@
     background-image: themed('logoImg');
   }
 
-  @media screen and (min-width: 835px) {
+  @media screen and (min-width: 768px) {
     display: block;
   }
 }
@@ -135,7 +135,7 @@
   margin-left: 8px;
   height: 18px;
   margin-top: auto;
-  fill: $color-accent;
+  fill: rgb(247, 222, 80);
 }
 
 .topbar__menu {
@@ -452,7 +452,6 @@
   border: none;
   background: transparent;
   transition: all 0.3s;
-  
 
   @include themify($themes) {
     color: themed('colorText');
@@ -549,7 +548,6 @@
 
   &:before {
     display: none;
-    
   }
 
   &:hover, &:focus, &:active, &:focus:active {
@@ -638,11 +636,10 @@
   right: 20px;
   font-size: 10px;
   line-height: 14px;
-  color: $color-accent;
 
-  // @include themify($themes) {
-  //   color: themed('colorIcon');
-  // }
+  @include themify($themes) {
+    color: themed('colorIcon');
+  }
 }
 
 .topbar__submenu {

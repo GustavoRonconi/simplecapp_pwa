@@ -1,27 +1,21 @@
-import Sidebar from "../containers/Layout/sidebar/Sidebar";
-import Topbar from "../containers/Layout/topbar/Topbar";
-import Layout from "../containers/Layout/index";
-import MainWrapper from '../containers/App/MainWrapper';
+import { Col, Container, Row } from 'reactstrap';
+import ExampleCard from '../containers/ExampleTwo/components/ExampleCard';
+
 
 
 function Home() {
-    return (
-        <div>
-            <MainWrapper>
-                <Layout>
-                    <div>
-                        <Topbar />
-                    </div>
-                    <div>
-                        <Sidebar />
-                    </div>
-                    <div>
-                        {/* <h1>Home</h1> */}
-                    </div>
-                </Layout>
-            </MainWrapper>
-        </div>
-    )
+  return (
+    <Container className="dashboard">
+      <Row>
+      <Col md={12}>
+        <h3 className="page-title">Home</h3>
+      </Col>
+    </Row>
+    <Row>
+      <ExampleCard />
+    </Row>
+    </Container>
+  )
 };
 
 export default Home;

@@ -1,21 +1,17 @@
+import ScrollToTop from '../src/containers/App/ScrollToTop';
+import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import './scss/app.scss'
+import Routers from './containers/App/Routers';
+import { Provider } from 'react-redux';
+// import { BrowserRouter } from 'react-router-dom';
+import store from './redux/store';
+import Home from './pages/Home';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom';
-import {
-  LOGIN,
-  HOME,
-} from './routes/routes'
-import PageLogin from './pages/PageLogin';
-import Home from './pages/Home';
-import ScrollToTop from '../src/containers/App/ScrollToTop';
-import React, { useEffect, useState } from 'react';
-// import Routers from './containers/App/Routers';
-import 'bootstrap/dist/css/bootstrap.css';
-import './scss/app.scss';
-
-
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,30 +26,9 @@ function App() {
 
 
   return (
-    <div>
-      {/* <Router>
-        <ScrollToTop>
-          {!isLoaded && (
-            <div className={`load${isLoading ? '' : ' loaded'}`}>
-              <div className="load__icon-wrap">
-                <svg className="load__icon">
-                  <path fill="#4ce1b6" d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" />
-                </svg>
-              </div>
-            </div>
-          )}
-          <div>
-            <Routers />
-          </div>
-        </ScrollToTop>
-      </Router> */}
+  
+      <Provider store={store}>
 
-
-
-
-
-
-      <Router>
         <ScrollToTop>
           {!isLoaded && (
             <div className={`load${isLoading ? '' : ' loaded'}`}>
@@ -64,48 +39,28 @@ function App() {
               </div>
             </div>
           )}
+              <Routers /> 
+
         </ScrollToTop>
-        <Routes>
-          <Route path={LOGIN} element={< PageLogin />} />
-          <Route path={HOME} element={< Home />} />
-        </Routes>
-      </Router >
 
+      </Provider>
 
-
-
-
-
-
-
-    </div >
+    
   )
 }
 
 export default App;
 
+{/* <Route path={LOGIN} element={< PageLogin />} /> */ }
 
 
-// (
-//   <Router>
-//     <Routes>
-//       <Route path={LOGIN} element={< PageLogin />} />
-//     </Routes>
+{/* COLOCAR ROTAS PRIVADAS
 
-//     <ScrollToTop>
-//       {!isLoaded && (
-//         <div className={`load${isLoading ? '' : ' loaded'}`}>
-//           <div className="load__icon-wrap">
-//             <svg className="load__icon">
-//               <path fill="#4ce1b6" d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" />
-//             </svg>
-//           </div>
-//         </div>
-//       )}
-//       <div>
-//         <Routers />
-//       </div>
-//     </ScrollToTop>
-//   </Router>
+      <Routes>
+        <Route exact path={HOME} element={<PrivateRoute/>}>
+            <Route exact path={HOME} element={<Home/>}/>
+          </Route>
+          
+          <Route path={LOGIN} element={< PageLogin />} />
 
-// );
+        </Routes> */}

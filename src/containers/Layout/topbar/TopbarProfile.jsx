@@ -8,20 +8,23 @@ import {logout} from '../../../auth/auth'
 
 const Ava = `${process.env.PUBLIC_URL}/images/ava.png`;
 
-const TopbarProfile = () => {
+const TopbarProfile = ({ user }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const handleToggleCollapse = () => {
+  const toggleProfile = () => {
     setIsCollapsed(!isCollapsed);
   };
 
-  //{jwt(sessionStorage.getItem("token")).email}
+  // const logout = () => {
+  //   localStorage.removeItem('easydev');
+  //   logoutAuth0();
+  // };
 
   return (
     <div className="topbar__profile">
-      <button type="button" className="topbar__avatar" onClick={handleToggleCollapse}>
+      <button type="button" className="topbar__avatar" onClick={toggleProfile}>
         <img className="topbar__avatar-img" src={Ava} alt="avatar" />
-        <p className="topbar__avatar-name">Nome usuario</p>
+        <p className="topbar__avatar-name">Roman Johanson</p>
         <DownIcon className="topbar__icon" />
       </button>
       {isCollapsed && (
@@ -29,7 +32,7 @@ const TopbarProfile = () => {
           type="button"
           aria-label="button collapse"
           className="topbar__back"
-          onClick={handleToggleCollapse}
+          onClick={toggleProfile}
         />
       )}
       <Collapse isOpen={isCollapsed} className="topbar__menu-wrap">
