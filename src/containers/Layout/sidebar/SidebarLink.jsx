@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Badge } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
+//activeclassname mudou, conferir
+
 const SidebarLink = ({
   title, icon, newLink, route, onClick,
 }) => (

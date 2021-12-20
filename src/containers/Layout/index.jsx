@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 // import { withRouter } from 'react-router';
+// import { useNavigate } from 'react-router-dom';
 
 import classNames from 'classnames';
 import Topbar from './topbar/Topbar';
@@ -7,6 +8,7 @@ import Sidebar from './sidebar/Sidebar';
 
 const Layout = () => {
  
+  
   const [isSidebarShown, setIsSidebarShown] = useState(false);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const layoutClass = classNames({
@@ -30,7 +32,6 @@ const Layout = () => {
       <Topbar
         changeMobileSidebarVisibility={changeMobileSidebarVisibility}
         changeSidebarVisibility={changeSidebarVisibility}
-       
       />
       <Sidebar
         sidebarShow={isSidebarShown}

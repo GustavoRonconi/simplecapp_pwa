@@ -2,16 +2,21 @@ import ScrollToTop from '../src/containers/App/ScrollToTop';
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './scss/app.scss'
-import Routers from './containers/App/Routers';
 import { Provider } from 'react-redux';
-// import { BrowserRouter } from 'react-router-dom';
 import store from './redux/store';
 import Home from './pages/Home';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
+  Route
 } from 'react-router-dom';
+import Documentation from './pages/Documentation'
+import { DOCUMENTATION, HOME, SERVICOS, SOBRE, LOGIN, NOT_FOUND } from './routes/routes';
+import Sobre from './pages/Sobre';
+import Servicos from './pages/Servicos';
+import PageLogin from './pages/PageLogin';
+import NotFound from './pages/NotFound'
+
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,9 +31,8 @@ function App() {
 
 
   return (
-  
+    <Router>
       <Provider store={store}>
-
         <ScrollToTop>
           {!isLoaded && (
             <div className={`load${isLoading ? '' : ' loaded'}`}>
@@ -39,13 +43,19 @@ function App() {
               </div>
             </div>
           )}
-              <Routers /> 
-
+          <div>
+            <Routes>
+              <Route path={LOGIN} element={< PageLogin />} />
+              <Route path={NOT_FOUND} element={<NotFound />} />
+              <Route path={HOME} element={<Home />} />
+              <Route path={DOCUMENTATION} element={<Documentation />} />
+              <Route path={SOBRE} element={<Sobre />} />
+              <Route path={SERVICOS} element={<Servicos />} />
+            </Routes>
+          </div>
         </ScrollToTop>
-
       </Provider>
-
-    
+    </Router>
   )
 }
 
