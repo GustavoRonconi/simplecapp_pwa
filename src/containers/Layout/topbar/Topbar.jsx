@@ -6,9 +6,6 @@ import TopbarProfile from './TopbarProfile';
 import TopbarNotification from './TopbarNotification';
 
 
-
-
-
 const Topbar = ({ changeMobileSidebarVisibility, changeSidebarVisibility }) => (
   <div className="topbar">
     <div className="topbar__wrapper">
@@ -18,11 +15,11 @@ const Topbar = ({ changeMobileSidebarVisibility, changeSidebarVisibility }) => (
           onClickDesktop={changeSidebarVisibility}
         />
         <Link className="topbar__logo" to="/">
-          <img src='images/simpleCappLogoAmarelo.png' alt='topbarLogo' size={30}/>
-          </Link>
+          <img src='images/simpleCappLogoAmarelo.png' alt='topbarLogo' size={30} />
+        </Link>
       </div>
       <div className="topbar__right">
-        <TopbarNotification/>
+        <TopbarNotification />
         <TopbarProfile />
       </div>
     </div>

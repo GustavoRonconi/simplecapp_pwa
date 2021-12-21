@@ -1,9 +1,9 @@
 .topbar {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  height: 60px;
-  z-index: 101;
+  width     : 100%;
+  position  : fixed;
+  top       : 0;
+  height    : 60px;
+  z-index   : 101;
   box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05);
 
   @include themify($themes) {
@@ -13,17 +13,17 @@
 
 .topbar__wrapper {
   position: relative;
-  display: flex;
-  height: 60px;
+  display : flex;
+  height  : 60px;
 }
 
 .topbar__button {
-  width: 60px;
-  height: 60px;
-  display: flex;
+  width     : 60px;
+  height    : 60px;
+  display   : flex;
   background: transparent;
-  border: none;
-  cursor: pointer;
+  border    : none;
+  cursor    : pointer;
   transition: 0.3s;
 
   &:focus {
@@ -43,58 +43,87 @@
 }
 
 .topbar__button-icon {
-  margin: auto;
+  margin    : auto;
   transition: all 0.3s;
-  width: 16px;
+  width     : 16px;
 }
 
 .topbar__logo {
-  width: 150px;
-  height: 32px;
-  margin: auto 0;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: left;
-  background-size: contain;
-  display: none;
+  width                   : 150px;
+  height                  : 32px;
+  margin                  : auto 0;
+  background-repeat       : no-repeat;
+  background-position-y   : center;
+  background-position-x   : left;
+  background-size         : contain;
+  // display              : none;
 
   @include themify($themes) {
     background-image: themed('logoImg');
   }
 
+  @media screen and (max-width: 315px) {
+
+    &.topbar__logo {
+      display: none;
+    }
+
+  }
+
   @media screen and (min-width: 768px) {
     display: block;
+    width  : 150px;
+    height : 32px;
+
   }
+
+  @media screen and (min-width: 280px) and (max-width: 700px) {
+    display: block;
+    width  : 90px;
+    height : 28px;
+  }
+
 }
 
 .topbar__right {
-  position: absolute;
-  right: 0;
-  display: flex;
-  height: 100%;
+  position    : absolute;
+  right       : 0;
+  display     : flex;
+  height      : 100%;
   margin-right: 15px;
+
+  @media screen and (min-width: 310px) and (max-width: 380px) {
+
+    &.topbar__right {
+      margin-right: 0;
+    }
+  }
+
 }
 
 .topbar__left {
   position: absolute;
-  left: 0;
-  display: flex;
-  height: 100%;
+  left    : 0;
+  display : flex;
+  height  : 100%;
 }
 
 .topbar__avatar {
-  height: 100%;
-  display: flex;
-  cursor: pointer;
-  position: relative;
-  border-radius: 0;
-  border: none;
-  transition: all 0.3s;
-  box-shadow: none;
-  padding: 0 15px;
+  height          : 100%;
+  display         : flex;
+  cursor          : pointer;
+  position        : relative;
+  border-radius   : 0;
+  border          : none;
+  transition      : all 0.3s;
+  box-shadow      : none;
+  padding         : 0 15px;
   background-color: transparent;
 
-  &:hover, &:focus, &:active, &:focus:active {
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus:active {
     @include themify($themes) {
       background-color: themed('colorHover');
     }
@@ -109,21 +138,23 @@
   }
 }
 
-.topbar__avatar-img, .topbar__avatar-name, .topbar__icon {
+.topbar__avatar-img,
+.topbar__avatar-name,
+.topbar__icon {
   margin: auto 0;
 }
 
 .topbar__avatar-img {
   border-radius: 50%;
-  height: 36px;
-  width: 36px;
+  height       : 36px;
+  width        : 36px;
 }
 
 .topbar__avatar-name {
-  font-size: 13px;
+  font-size  : 13px;
   line-height: 18px;
   font-weight: 400;
-  display: none;
+  display    : none;
   margin-left: 10px;
 
   @include themify($themes) {
@@ -133,18 +164,18 @@
 
 .topbar__icon {
   margin-left: 8px;
-  height: 18px;
-  margin-top: auto;
-  fill: rgb(247, 222, 80);
+  height     : 18px;
+  margin-top : auto;
+  fill       : rgb(247, 222, 80);
 }
 
 .topbar__menu {
-  width: 200px;
+  width        : 200px;
   border-radius: 0;
-  border: none;
-  padding: 15px 0;
-  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05);
-  margin-top: 0;
+  border       : none;
+  padding      : 15px 0;
+  box-shadow   : 0 2px 15px 0 rgba(0, 0, 0, 0.05);
+  margin-top   : 0;
 
   @include themify($themes) {
     background: themed('colorBackground');
@@ -158,10 +189,11 @@
         background-color: themed('colorHover');
       }
     }
+
     &.topbar__link {
       background-color: transparent;
-      border: none;
-      padding: 9px 20px;
+      border          : none;
+      padding         : 9px 20px;
     }
   }
 
@@ -171,37 +203,37 @@
 }
 
 .topbar__menu-wrap {
-  z-index: 101;
-  position: absolute;
-  width: 100%;
-  padding: 0 10px;
+  z-index  : 101;
+  position : absolute;
+  width    : 100%;
+  padding  : 0 10px;
   min-width: 220px;
-  right: 0;
+  right    : 0;
 }
 
 .topbar__link {
-  display: flex;
-  padding: 9px 20px;
+  display      : flex;
+  padding      : 9px 20px;
   padding-right: 49px;
-  transition: all 0.3s;
-  height: 32px;
-  width: 100%;
-  position: relative;
-  cursor: pointer;
+  transition   : all 0.3s;
+  height       : 32px;
+  width        : 100%;
+  position     : relative;
+  cursor       : pointer;
 
   @include themify($themes) {
     color: themed('colorText');
   }
 
   &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 2px;
+    content   : "";
+    position  : absolute;
+    left      : 0;
+    top       : 0;
+    height    : 100%;
+    width     : 2px;
     background: $color-accent;
-    opacity: 0;
+    opacity   : 0;
     transition: all 0.3s;
   }
 
@@ -217,15 +249,15 @@
 }
 
 .topbar__link-title {
-  margin: 0;
-  font-size: 14px;
+  margin     : 0;
+  font-size  : 14px;
   line-height: 16px;
 }
 
 .topbar__link-icon {
   margin-right: 10px;
-  font-size: 13px;
-  line-height: 13px;
+  font-size   : 13px;
+  line-height : 13px;
 
   @include themify($themes) {
     color: themed('colorIcon');
@@ -242,37 +274,38 @@
 
 .topbar__profile {
   margin-bottom: 0;
-  margin-left: 20px;
-  position: relative;
+  margin-left  : 20px;
+  position     : relative;
 }
 
 .topbar__collapse {
-  position: relative;
-  display: none;
+  position   : relative;
+  // display : none;
 
   &.topbar__collapse--language {
     min-width: 70px;
-    display: block;
+    display  : block;
 
-    & > button {
+    &>button {
       padding: 0 4px;
-      width: 100%;
+      width  : 100%;
     }
   }
 
   @media screen and (min-width: 568px) {
     display: block;
   }
+
 }
 
 .topbar__collapse-content {
-  width: 270px;
-  position: absolute;
-  right: 0;
-  bottom: 20px;
-  transform: translateY(100%);
+  width     : 270px;
+  position  : absolute;
+  right     : 0;
+  bottom    : 20px;
+  transform : translateY(100%);
   box-shadow: 0 10px 25px 0 rgba(33, 36, 50, 0.13);
-  z-index: 101;
+  z-index   : 101;
 
   @include themify($themes) {
     background: themed('colorBackground');
@@ -280,12 +313,12 @@
 
   &.topbar__collapse-content--language {
     max-width: 70px;
-    padding: 10px 0;
-    width: 100%;
+    padding  : 10px 0;
+    width    : 100%;
   }
 
   @media screen and (max-width: 768px) {
-    left: 50%;
+    left     : 50%;
     transform: translate(-50%, 100%);
   }
 
@@ -295,15 +328,15 @@
 }
 
 .topbar__language-btn {
-  padding: 4px 15px;
-  width: 100%;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  text-align: left;
-  font-size: 13px;
+  padding    : 4px 15px;
+  width      : 100%;
+  border     : none;
+  background : transparent;
+  cursor     : pointer;
+  text-align : left;
+  font-size  : 13px;
   line-height: 16px;
-  transition: 0.3s;
+  transition : 0.3s;
 
   &:hover {
     color: $color-accent;
@@ -311,10 +344,10 @@
 }
 
 .topbar__language-btn-title {
-  display: flex;
-  font-size: 11px;
+  display    : flex;
+  font-size  : 11px;
   align-items: center;
-  margin: auto 0;
+  margin     : auto 0;
 
   @include themify($themes) {
     color: themed('colorText');
@@ -325,30 +358,30 @@
   }
 
   img {
-    height: 11px;
-    width: 16px;
+    height      : 11px;
+    width       : 16px;
     margin-right: 4px;
   }
 }
 
 .topbar__back {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
+  position  : fixed;
+  width     : 100vw;
+  height    : 100vh;
+  top       : 0;
+  bottom    : 0;
+  left      : 0;
+  right     : 0;
+  z-index   : 100;
   background: transparent;
-  border: none;
+  border    : none;
 }
 
 .topbar__collapse-title-wrap {
-  padding: 20px 15px 15px 15px;
-  display: flex;
+  padding        : 20px 15px 15px 15px;
+  display        : flex;
   justify-content: space-between;
-  align-items: center;
+  align-items    : center;
 
   @include themify($themes) {
     border-bottom: 1px solid themed('colorBorder');
@@ -356,12 +389,12 @@
 }
 
 .topbar__collapse-item {
-  padding: 12px 55px 12px 70px;
-  display: flex;
-  position: relative;
-  height: 62px;
+  padding    : 12px 55px 12px 70px;
+  display    : flex;
+  position   : relative;
+  height     : 62px;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap  : wrap;
 
   @include themify($themes) {
     border-bottom: 1px solid themed('colorBorder');
@@ -369,53 +402,53 @@
 }
 
 .topbar__collapse-img-wrap {
-  height: 40px;
-  width: 40px;
+  height       : 40px;
+  width        : 40px;
   border-radius: 50%;
-  overflow: hidden;
-  position: absolute;
-  left: 15px;
+  overflow     : hidden;
+  position     : absolute;
+  left         : 15px;
 }
 
 .topbar__collapse-message {
-  margin: 0;
-  font-size: 12px;
+  margin     : 0;
+  font-size  : 12px;
   line-height: 16px;
-  color: $color-gray;
+  color      : $color-gray;
 
   &.topbar__collapse-message--mail {
     text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+    overflow     : hidden;
+    white-space  : nowrap;
   }
 }
 
 .topbar__collapse-name {
-  margin: 0;
-  font-size: 12px;
+  margin     : 0;
+  font-size  : 12px;
   line-height: 16px;
-  color: $color-accent;
+  color      : $color-accent;
 }
 
 .topbar__collapse-date {
-  position: absolute;
-  top: 12px;
-  right: 15px;
-  font-size: 10px;
-  color: $color-gray;
+  position  : absolute;
+  top       : 12px;
+  right     : 15px;
+  font-size : 10px;
+  color     : $color-gray;
   margin-top: 2px;
 }
 
 .topbar__collapse-link {
-  display: block;
-  padding: 10px;
+  display       : block;
+  padding       : 10px;
   text-transform: uppercase;
-  color: $color-accent;
-  transition: 0.3s;
-  text-align: center;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 16px;
+  color         : $color-accent;
+  transition    : 0.3s;
+  text-align    : center;
+  font-weight   : 500;
+  font-size     : 10px;
+  line-height   : 16px;
 
   &:hover {
     color: $color-accent-hover;
@@ -423,19 +456,19 @@
 }
 
 .topbar__collapse-title {
-  font-size: 14px;
+  font-size  : 14px;
   line-height: 16px;
 }
 
 .topbar__collapse-button {
-  color: #c5d2d6;
-  border: none;
-  padding: 0;
-  text-align: right;
-  font-size: 12px;
+  color      : #c5d2d6;
+  border     : none;
+  padding    : 0;
+  text-align : right;
+  font-size  : 12px;
   line-height: 16px;
-  transition: 0.3s;
-  background: transparent;
+  transition : 0.3s;
+  background : transparent;
 
   &:hover {
     color: $color-accent;
@@ -443,13 +476,13 @@
 }
 
 .topbar__btn {
-  font-size: 18px;
-  height: 100%;
-  padding: 0 10px;
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  border: none;
+  font-size : 18px;
+  height    : 100%;
+  padding   : 0 10px;
+  cursor    : pointer;
+  position  : relative;
+  display   : flex;
+  border    : none;
   background: transparent;
   transition: all 0.3s;
 
@@ -467,41 +500,41 @@
   svg {
     margin: auto;
     height: 18px;
-    width: 18px;
-    fill: #b1c3c8;
+    width : 18px;
+    fill  : #b1c3c8;
   }
 
   &.topbar__btn--new {
 
     .topbar__btn-new-label {
       position: absolute;
-      right: 9px;
-      top: 20px;
+      right   : 9px;
+      top     : 20px;
 
-      & > div {
+      &>div {
         position: relative;
 
         &:before {
           background-color: rgba(224, 83, 111, 0.2);
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          border-radius: 50%;
-          transform: translate(-50%, -50%);
-          animation: beforePulse 1.5s infinite;
+          content         : "";
+          position        : absolute;
+          top             : 50%;
+          left            : 50%;
+          border-radius   : 50%;
+          transform       : translate(-50%, -50%);
+          animation       : beforePulse 1.5s infinite;
         }
 
         &:after {
-          height: 7px;
-          width: 7px;
+          height          : 7px;
+          width           : 7px;
           background-color: #e0536f;
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          border-radius: 50%;
-          transform: translate(-50%, -50%);
+          content         : "";
+          position        : absolute;
+          top             : 50%;
+          left            : 50%;
+          border-radius   : 50%;
+          transform       : translate(-50%, -50%);
         }
       }
     }
@@ -509,38 +542,40 @@
 
   @keyframes beforePulse {
     from {
-      width: 7px;
+      width : 7px;
       height: 7px;
     }
+
     25% {
-      width: 13px;
+      width : 13px;
       height: 13px;
     }
+
     to {
-      width: 7px;
+      width : 7px;
       height: 7px;
     }
   }
 }
 
 .topbar__nav {
-  width: 100%;
-  display: none;
-  height: 100%;
+  width          : 100%;
+  display        : none;
+  height         : 100%;
   justify-content: center;
-  align-items: center;
+  align-items    : center;
 }
 
 .topbar .topbar__nav-dropdown-toggle {
-  height: 60px;
-  background: transparent;
-  border-radius: 0;
-  border: none;
-  font-size: 14px;
-  display: flex;
+  height         : 60px;
+  background     : transparent;
+  border-radius  : 0;
+  border         : none;
+  font-size      : 14px;
+  display        : flex;
   justify-content: center;
-  align-items: center;
-  margin: 0;
+  align-items    : center;
+  margin         : 0;
 
   @include themify($themes) {
     color: themed('colorText');
@@ -550,7 +585,10 @@
     display: none;
   }
 
-  &:hover, &:focus, &:active, &:focus:active {
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus:active {
 
     @include themify($themes) {
       background-color: themed('colorHover');
@@ -558,16 +596,16 @@
   }
 
   svg {
-    fill: $color-additional;
-    margin-left: 3px;
-    height: 16px;
-    width: 16px;
+    fill        : $color-additional;
+    margin-left : 3px;
+    height      : 16px;
+    width       : 16px;
     margin-right: 0;
   }
 }
 
 .topbar__nav-dropdown-menu {
-  width: 240px;
+  width     : 240px;
   border-top: 2px solid $color-accent;
 
   button {
@@ -576,35 +614,35 @@
 }
 
 .topbar__link-badge {
-  width: 26px;
-  height: 14px;
+  width           : 26px;
+  height          : 14px;
   background-color: $color-red;
-  font-size: 8px;
-  font-weight: 400;
-  padding: 2px;
-  margin-left: 5px;
-  line-height: 9px;
-  position: relative;
-  text-transform: uppercase;
-  border-radius: 7px;
+  font-size       : 8px;
+  font-weight     : 400;
+  padding         : 2px;
+  margin-left     : 5px;
+  line-height     : 9px;
+  position        : relative;
+  text-transform  : uppercase;
+  border-radius   : 7px;
 
   span {
-    position: absolute;
-    left: 0;
-    top: 3px;
-    width: 26px;
+    position  : absolute;
+    left      : 0;
+    top       : 3px;
+    width     : 26px;
     text-align: center;
   }
 }
 
 .topbar__nav-link {
-  display: flex;
-  align-items: center;
+  display        : flex;
+  align-items    : center;
   justify-content: center;
-  height: 60px;
-  padding: 10px 25px;
-  transition: 0.3s;
-  font-size: 14px;
+  height         : 60px;
+  padding        : 10px 25px;
+  transition     : 0.3s;
+  font-size      : 14px;
 
   @include themify($themes) {
     color: themed('colorText');
@@ -623,18 +661,18 @@
 
   &:hover {
 
-    & > .topbar__submenu {
+    &>.topbar__submenu {
       opacity: 1;
-      width: auto;
-      height: auto;
+      width  : auto;
+      height : auto;
     }
   }
 }
 
 .topbar__category-icon {
-  position: absolute;
-  right: 20px;
-  font-size: 10px;
+  position   : absolute;
+  right      : 20px;
+  font-size  : 10px;
   line-height: 14px;
 
   @include themify($themes) {
@@ -643,14 +681,14 @@
 }
 
 .topbar__submenu {
-  position: absolute;
-  right: 1px;
-  top: 0;
-  transform: translateX(100%);
+  position  : absolute;
+  right     : 1px;
+  top       : 0;
+  transform : translateX(100%);
   transition: 0.3s;
-  opacity: 0;
-  width: 0;
-  height: 0;
+  opacity   : 0;
+  width     : 0;
+  height    : 0;
 
   @include themify($themes) {
     background-color: themed('colorHover');
@@ -668,21 +706,21 @@
 }
 
 .topbar__search {
-  display: none;
-  margin: auto 0;
-  padding: 0;
+  display : none;
+  margin  : auto 0;
+  padding : 0;
   position: relative;
 }
 
 .topbar__search-field {
-  width: 0;
-  transition: all 0.3s;
-  opacity: 0;
-  margin: auto auto auto 0;
-  border: none;
+  width        : 0;
+  transition   : all 0.3s;
+  opacity      : 0;
+  margin       : auto auto auto 0;
+  border       : none;
   border-radius: 13px;
-  height: 26px;
-  padding-left: 10px;
+  height       : 26px;
+  padding-left : 10px;
   padding-right: 46px;
 
   @include themify($themes) {
@@ -690,11 +728,11 @@
   }
 
   &.topbar__search-field--open {
-    width: 200px;
-    opacity: 1;
+    width      : 200px;
+    opacity    : 1;
     margin-left: 10px;
 
-    & + button {
+    &+button {
       right: 10px;
     }
   }
@@ -705,14 +743,14 @@
 }
 
 .topbar__search-btn {
-  height: 26px;
-  width: 26px;
+  height       : 26px;
+  width        : 26px;
   border-radius: 13px;
-  border: none;
-  padding: 0;
-  background: transparent;
-  position: absolute;
-  right: 0;
+  border       : none;
+  padding      : 0;
+  background   : transparent;
+  position     : absolute;
+  right        : 0;
 
   &:hover {
 
@@ -730,8 +768,9 @@
 
   .topbar__menu {
     width: 100%;
-    left: 0 !important;
+    left : 0 !important;
   }
+
 }
 
 @media screen and (min-width: 576px) {
@@ -772,7 +811,7 @@
 
     .topbar__logo {
       margin-left: 15px;
-      display: block;
+      display    : block;
     }
 
     .topbar__button.topbar__button--mobile {
@@ -801,7 +840,8 @@
 
 @media screen and (min-width: 1580px) {
 
-  .topbar__nav-dropdown-toggle, .topbar__nav-link {
+  .topbar__nav-dropdown-toggle,
+  .topbar__nav-link {
     width: 240px;
   }
 }
