@@ -1,30 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DownIcon from 'mdi-react/ChevronDownIcon';
 import { Collapse } from 'reactstrap';
 import TopbarMenuLink from './TopbarMenuLink';
-// import jwt from 'jwt-decode'
 import {LOGIN} from '../../../routes/routes'
 import {logout} from '../../../auth/auth'
+import jwt from 'jwt-decode'
+import sendRegister from '../../../services/apiServices';
+
 
 const Ava = `${process.env.PUBLIC_URL}/images/ava.png`;
 
-const TopbarProfile = ({ user }) => {
+const TopbarProfile = ({ }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleProfile = () => {
     setIsCollapsed(!isCollapsed);
   };
 
+   
   // const logout = () => {
   //   localStorage.removeItem('easydev');
   //   logoutAuth0();
   // };
 
+  // {jwt(sessionStorage.getItem("token")).name}
+
+
   return (
     <div className="topbar__profile">
       <button type="button" className="topbar__avatar" onClick={toggleProfile}>
         <img className="topbar__avatar-img" src={Ava} alt="avatar" />
-        <p className="topbar__avatar-name">Roman Johanson</p>
+        <p className="topbar__avatar-name">{jwt(sessionStorage.getItem("token")).email}</p>
         <DownIcon className="topbar__icon" />
       </button>
       {isCollapsed && (

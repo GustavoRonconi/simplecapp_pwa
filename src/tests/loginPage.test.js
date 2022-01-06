@@ -9,7 +9,7 @@ describe('login', () => {
     expect(screen.getByText('Digite seu e-mail e receba um código de acesso.')).toBeInTheDocument()
     // expect(screen.getByText('Olá, bem-vindo(a) a plataforma SimpleCapp &#x1F4B0;')).toBeInTheDocument()
   })
-  test('mostrar botão login', () => {
+  it('mostrar botão login', () => {
     render(<Login />)
     const buttonLogin = screen.getByRole('button');
 

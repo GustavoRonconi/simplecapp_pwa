@@ -92,7 +92,6 @@ export default function InsertCode({ setSteps, valuesLogin }) {
     //pegar email e atualizar código
     function resendCode() {
         sendRegister(valuesLogin);
-
     }
 
 
