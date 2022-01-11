@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import DownIcon from 'mdi-react/ChevronDownIcon';
 import { Collapse } from 'reactstrap';
 import TopbarMenuLink from './TopbarMenuLink';
-import {LOGIN} from '../../../routes/routes'
+import {EDITAR_CADASTRO, LOGIN} from '../../../routes/routes'
 import {logout} from '../../../auth/auth'
 import jwt from 'jwt-decode'
-import sendRegister from '../../../services/apiServices';
+
 
 
 const Ava = `${process.env.PUBLIC_URL}/images/ava.png`;
@@ -43,7 +43,7 @@ const TopbarProfile = ({ }) => {
       )}
       <Collapse isOpen={isCollapsed} className="topbar__menu-wrap">
         <div className="topbar__menu">
-          <TopbarMenuLink title="Page one" icon="list" path="/pages/one" />
+          <TopbarMenuLink title="Editar Perfil" icon="pencil" path={EDITAR_CADASTRO} />
           <TopbarMenuLink title="Page two" icon="inbox" path="/pages/two" />
           <div className="topbar__menu-divider" />
           <TopbarMenuLink title="Sair" icon="exit" path={LOGIN} onClick={logout}/>

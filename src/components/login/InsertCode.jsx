@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { HOME } from '../../routes/routes'
 import { FormText } from 'reactstrap';
 import Loading from './Loading';
-
+import axios from "axios"
 
 
 
@@ -20,6 +20,7 @@ export default function InsertCode({ setSteps, valuesLogin }) {
     const navigate = useNavigate();
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false)
+    const baseURL = 'https://61b212bac8d4640017aaf19c.mockapi.io/api/v1'
 
 
 
@@ -78,7 +79,7 @@ export default function InsertCode({ setSteps, valuesLogin }) {
             setCode(e)
             // chamar o método que envia o código pra API
             setLoading(true);
-            api.post("/login").then(
+            axios.post(baseURL + "/login").then(
                 response => {
                     login(response.data.token);                    
                     navigate(HOME)

@@ -11,12 +11,14 @@ import {
   Route
 } from 'react-router-dom';
 import Documentation from './pages/Documentation'
-import { DOCUMENTATION, HOME, SERVICOS, SOBRE, LOGIN, NOT_FOUND } from './routes/routes';
+import { DOCUMENTATION, HOME, SERVICOS, SOBRE, LOGIN, NOT_FOUND, EDITAR_CADASTRO } from './routes/routes';
 import Sobre from './pages/Sobre';
 import Servicos from './pages/Servicos';
 import PageLogin from './pages/PageLogin';
 import NotFound from './pages/NotFound'
+import EditProfile from './pages/EditProfile';
 
+//criar rotas privadas e publicas
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -51,6 +53,7 @@ function App() {
               <Route path={DOCUMENTATION} element={<Documentation />} />
               <Route path={SOBRE} element={<Sobre />} />
               <Route path={SERVICOS} element={<Servicos />} />
+              <Route path={EDITAR_CADASTRO} element={<EditProfile/>}/>
             </Routes>
           </div>
         </ScrollToTop>

@@ -1,0 +1,30 @@
+.inputZoom {
+    border-radius: 8px;
+    height: 4px;
+    width: 150px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.inputFileAvatar {
+   background-color: #232329;
+   border:none;
+   font-size: small;
+    
+}
+
+/* label:hover {
+    background-color: rgb(247, 222, 80);
+} */
+input:hover {
+    background-color: transparent;
+}
+
+
+input[type='range']::-webkit-slider-thumb {
+    width: 8%;
+    -webkit-appearance: none;
+    height: 12px;
+    background: rgb(247, 222, 80);
+    border-radius: 100%;
+  }

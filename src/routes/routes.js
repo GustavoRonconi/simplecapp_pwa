@@ -4,6 +4,7 @@ const LOGIN = "/login"
 const DOCUMENTATION = '/documentation'
 const SOBRE = '/sobre'
 const SERVICOS = '/servicos'
+const EDITAR_CADASTRO = '/editar-cadastro'
 const NOT_FOUND = '*'
 
 export {
@@ -12,5 +13,6 @@ export {
     DOCUMENTATION,
     SOBRE,
     SERVICOS,
+    EDITAR_CADASTRO,
     NOT_FOUND
 }
