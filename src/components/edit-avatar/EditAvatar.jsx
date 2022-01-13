@@ -21,7 +21,7 @@ export default class EditAvatar extends React.Component {
 
 
 
-    handleNewImage = e => {
+    handleImageProfile = e => {
         this.setState({ image: e.target.files[0] });
     };
 
@@ -75,7 +75,7 @@ export default class EditAvatar extends React.Component {
                     <Col class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
 
                         <Label>
-                            <Input name="newImage" type="file" onChange={this.handleNewImage} className="inputFileAvatar" />
+                            <Input name="imageProfile" type="file" onChange={this.handleImageProfile} className="inputFileAvatar" />
                         </Label>
                         
                     </Col>
