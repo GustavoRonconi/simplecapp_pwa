@@ -24,7 +24,7 @@ function EditProfile() {
                                 </Col>
                             </Row>
                             <Row>
-                              <CardEditProfile/>
+                              <CardEditProfile />
                             </Row>
                         </Container>
                     </div>

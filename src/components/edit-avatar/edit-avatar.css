@@ -13,9 +13,7 @@
     
 }
 
-/* label:hover {
-    background-color: rgb(247, 222, 80);
-} */
+
 input:hover {
     background-color: transparent;
 }
@@ -28,3 +26,23 @@ input[type='range']::-webkit-slider-thumb {
     background: rgb(247, 222, 80);
     border-radius: 100%;
   }
+
+  input[type="file" ] {
+    display: none;
+}
+
+.labelAvatar {
+    padding: 1%;
+    width: 20%;
+    background-color: #2A2A31;
+    border-radius: 3%;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-top: 1%;
+    cursor: pointer;
+    border: solid;
+   border-color: rgb(247, 222, 80);
+}
+

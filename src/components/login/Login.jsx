@@ -31,12 +31,16 @@ function Login({ setSteps, setValuesLogin }) {
 
   //validação e seta o erros
   const validate = (values) => {
+    
     const errors = {}
+
     if (!values.email) {
       errors.email = 'O e-mail é obrigatório.';
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
       errors.email = 'Endereço de e-mail inválido.';
     }
+
+    
     setLoading(false)
     return errors   
   }

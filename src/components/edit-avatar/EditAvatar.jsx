@@ -1,6 +1,6 @@
 import React from "react";
 import ReactAvatarEditor from "react-avatar-editor";
-import { Input, Col, Row, Label, } from 'reactstrap';
+import { Input, Col, Row, Label, Button} from 'reactstrap';
 
 import './edit-avatar.css'
 
@@ -74,16 +74,16 @@ export default class EditAvatar extends React.Component {
                 <Row>
                     <Col class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
 
-                        <Label>
+                        <Label className="labelAvatar">
+                        <strong>Escolher imagem</strong>
                             <Input name="imageProfile" type="file" onChange={this.handleImageProfile} className="inputFileAvatar" />
                         </Label>
-                        
+
                     </Col>
                 </Row>
 
                 <Row>
                     <Col class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
-
                         <Input
                             name="scale"
                             type="range"
@@ -93,7 +93,6 @@ export default class EditAvatar extends React.Component {
                             step="0.01"
                             defaultValue="1"
                             className="inputZoom"
-                            
                         />
 
                     </Col>
