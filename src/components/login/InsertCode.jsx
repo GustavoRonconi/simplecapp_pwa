@@ -6,7 +6,7 @@ import { useState } from 'react'
 import sendRegister from '../../services/apiServices';
 import api from '../../services/axiosConfig';
 import { login } from '../../auth/auth'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { HOME } from '../../routes/routes'
 import { FormText } from 'reactstrap';
 import Loading from './Loading';
@@ -21,7 +21,7 @@ export default function InsertCode({ setSteps, valuesLogin }) {
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false)
     const baseURL = 'https://61b212bac8d4640017aaf19c.mockapi.io/api/v1'
-
+    // const { state } = useLocation();
 
 
     //style code-input
@@ -81,7 +81,8 @@ export default function InsertCode({ setSteps, valuesLogin }) {
             setLoading(true);
             axios.post(baseURL + "/login").then(
                 response => {
-                    login(response.data.token);                    
+                    login(response.data.token);
+                    // navigate(state?.path || HOME)
                     navigate(HOME)
                     setLoading(false);
                 }

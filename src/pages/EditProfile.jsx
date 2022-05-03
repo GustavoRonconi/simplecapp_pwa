@@ -1,15 +1,17 @@
-import { Col, Container, Row  } from 'reactstrap';
+import { Col, Container, Row, Card } from 'reactstrap';
 import MainWrapper from '../containers/App/MainWrapper';
 import Layout from '../containers/Layout';
-import CardEditProfile from '../containers/Card/profile/CardEditProfile';
+
+import { useState } from "react";
+import AppTest from '../containers/Card/profile/AppTest';
+import { FormikForm, Formulario } from '../containers/Card/profile/FormikForm';
+import EditAvatar from '../components/edit-avatar/EditAvatar';
 
 
+function EditProfile({ props }) {
 
-
-function EditProfile() {
-
-    
-
+    const [loginSteps, setSteps] = useState(1);
+    const [valuesLogin, setValuesLogin] = useState({});
 
     return (
         <MainWrapper>
@@ -17,6 +19,7 @@ function EditProfile() {
                 <div>
                     <Layout />
                     <div className="container__wrap" >
+
                         <Container className="dashboard">
                             <Row>
                                 <Col md={12}>
@@ -24,9 +27,16 @@ function EditProfile() {
                                 </Col>
                             </Row>
                             <Row>
-                              <CardEditProfile />
+
+                                <AppTest />
+                                {/* <FormikForm/> */}
+                                {/* <EditAvatar/> */}
+
+
                             </Row>
+
                         </Container>
+
                     </div>
                 </div>
             </main>

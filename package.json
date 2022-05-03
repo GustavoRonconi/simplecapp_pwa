@@ -10,10 +10,12 @@
     "axios": "^0.24.0",
     "bootstrap": "^4.5.3",
     "classnames": "^2.3.1",
+    "croppie": "^2.6.5",
     "customize-cra": "^1.0.0",
     "enzyme": "^3.11.0",
     "final-form": "^4.20.6",
     "format-string-by-pattern": "^1.2.2",
+    "formik": "^2.2.9",
     "jest-junit": "^13.0.0",
     "jest-mock": "^27.4.2",
     "jwt-decode": "^3.1.2",
@@ -28,6 +30,7 @@
     "react-icons": "^4.3.1",
     "react-input-mask": "^2.0.4",
     "react-lottie": "^1.2.3",
+    "react-mask-field": "^3.0.1",
     "react-native": "^0.66.3",
     "react-native-web": "^0.17.5",
     "react-redux": "^7.2.6",
@@ -48,7 +51,8 @@
     "text-mask-addons": "^3.8.0",
     "use-history": "^1.4.1",
     "web-vitals": "^1.1.2",
-    "with-router": "^1.0.1"
+    "with-router": "^1.0.1",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

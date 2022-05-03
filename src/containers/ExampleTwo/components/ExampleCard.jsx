@@ -3,7 +3,7 @@ import { Card, CardBody, Col } from 'reactstrap';
 
 const ExampleCard = () => (
   <Col md={12}>
-    <Card>
+    {/* <Card> */}
       <CardBody>
         <div className="card__title">
           <h5 className="bold-text">Example title</h5>
@@ -22,7 +22,7 @@ const ExampleCard = () => (
           Massa eget egestas purus viverra accumsan in. Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Vivamus arcu felis bibendum ut tristique et egestas. Amet mattis vulputate enim nulla aliquet. Aliquam ultrices sagittis orci a scelerisque purus semper eget duis. Tincidunt arcu non sodales neque sodales. Et netus et malesuada fames ac turpis. Sit amet est placerat in egestas erat imperdiet sed. Lacinia at quis risus sed vulputate odio. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Elit eget gravida cum sociis. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Enim facilisis gravida neque convallis a cras semper. Nibh nisl condimentum id venenatis a. Feugiat vivamus at augue eget. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Eget arcu dictum varius duis at consectetur lorem donec. Ridiculus mus mauris vitae ultricies leo integer malesuada. Enim neque volutpat ac tincidunt vitae semper quis.
         </p>
       </CardBody>
-    </Card>
+    {/* </Card> */}
   </Col>
 );
 

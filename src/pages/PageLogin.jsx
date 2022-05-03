@@ -9,25 +9,26 @@ function PageLogin() {
 
     const [loginSteps, setSteps] = useState(1);
     const [valuesLogin, setValuesLogin] = useState({});
+    
 
     return (
 
-
-        <Container style={{ backgroundColor: 'rgb(247, 222, 80)', height: '100vh' }}>
-            <Row>
-                <Col style={{margin:'2.5% 0 0 4.5%'}}>
-                    <img className="image" src="images/logo.png" alt="logo" />
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    {loginSteps === 1 ?
-                        <Login setSteps={setSteps} setValuesLogin={setValuesLogin} /> :
-                        <InsertCode setSteps={setSteps} valuesLogin={valuesLogin} />}
-                </Col>
-            </Row>
-        </Container>
-
+        <div style={{ backgroundColor: 'rgb(247, 222, 80)'}}>
+            <Container style={{ backgroundColor: 'rgb(247, 222, 80)', height: '100vh' }}>
+                <Row>
+                    <Col style={{ margin: '2.5% 0 0 4.5%' }}>
+                        <img className="image" src="images/logo.png" alt="logo" />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        {loginSteps === 1 ?
+                            <Login setSteps={setSteps} setValuesLogin={setValuesLogin} /> :
+                            <InsertCode setSteps={setSteps} valuesLogin={valuesLogin} />}
+                    </Col>
+                </Row>
+            </Container>
+        </div>
     )
 
 }

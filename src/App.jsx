@@ -17,6 +17,7 @@ import Servicos from './pages/Servicos';
 import PageLogin from './pages/PageLogin';
 import NotFound from './pages/NotFound'
 import EditProfile from './pages/EditProfile';
+import PrivateRoute from './routes/PrivateRoute';
 
 //criar rotas privadas e publicas
 
@@ -47,13 +48,65 @@ function App() {
           )}
           <div>
             <Routes>
+
+
               <Route path={LOGIN} element={< PageLogin />} />
-              <Route path={NOT_FOUND} element={<NotFound />} />
-              <Route path={HOME} element={<Home />} />
-              <Route path={DOCUMENTATION} element={<Documentation />} />
-              <Route path={SOBRE} element={<Sobre />} />
-              <Route path={SERVICOS} element={<Servicos />} />
-              <Route path={EDITAR_CADASTRO} element={<EditProfile/>}/>
+
+              <Route
+                path={NOT_FOUND}
+                element={
+                  // <PrivateRoute>
+                    <NotFound />
+                  // </PrivateRoute>
+                }
+              />
+
+              <Route
+                path={HOME}
+                element={
+                  // <PrivateRoute>
+                    <Home />
+                  // </PrivateRoute>
+                }
+              />
+
+
+              <Route
+                path={DOCUMENTATION}
+                element={
+                  // <PrivateRoute>
+                    <Documentation />
+                  // </PrivateRoute>
+                }
+              />
+
+              <Route
+                path={SOBRE}
+                element={
+                  // <PrivateRoute>
+                    <Sobre />
+                  // </PrivateRoute>
+                }
+              />
+
+              <Route
+                path={SERVICOS}
+                element={
+                  // <PrivateRoute>
+                    <Servicos />
+                  // </PrivateRoute>
+                }
+              />
+
+              <Route
+                path={EDITAR_CADASTRO}
+                element={
+                  // <PrivateRoute>
+                    <EditProfile />
+                  // </PrivateRoute>
+                }
+              />
+
             </Routes>
           </div>
         </ScrollToTop>
